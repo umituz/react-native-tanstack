@@ -72,6 +72,14 @@ export {
   type OptimisticUpdateConfig,
 } from './presentation/hooks/useOptimisticUpdate';
 
+// Presentation - Utils
+export {
+  createConditionalRetry,
+  createQuotaAwareRetry,
+  type RetryFunction,
+  type ErrorChecker,
+} from './presentation/utils/RetryHelpers';
+
 // Re-export TanStack Query core for convenience
 export {
   useQuery,

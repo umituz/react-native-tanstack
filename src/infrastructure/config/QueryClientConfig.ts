@@ -60,6 +60,11 @@ export const CacheStrategies: Record<CacheStrategyType, CacheConfig> = {
 };
 
 /**
+ * Retry function type
+ */
+export type RetryFunction = (failureCount: number, error: Error) => boolean;
+
+/**
  * QueryClient factory options
  */
 export interface QueryClientFactoryOptions {
@@ -77,9 +82,10 @@ export interface QueryClientFactoryOptions {
 
   /**
    * Default retry configuration
+   * Can be a boolean, number, or custom retry function
    * @default 3
    */
-  defaultRetry?: boolean | number;
+  defaultRetry?: boolean | number | RetryFunction;
 
   /**
    * Enable development mode logging

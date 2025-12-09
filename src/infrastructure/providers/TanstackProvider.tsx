@@ -109,7 +109,7 @@ export function TanstackProvider({
   persisterOptions,
   onPersistSuccess,
   onPersistError,
-}: TanstackProviderProps): JSX.Element {
+}: TanstackProviderProps): React.ReactElement {
   // Create QueryClient if not provided
   const [queryClient] = React.useState(() => providedQueryClient ?? createQueryClient(queryClientOptions));
 
